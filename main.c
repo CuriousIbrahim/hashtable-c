@@ -23,7 +23,7 @@ void insert(struct HashTable *ht, int val) {
         ht->table[index][0] = val;
 
         ht->capacity[index] = START_SIZE;
-        ht->currentSize[index] += 1;
+        ht->currentSize[index] = 1;
         ht->initialized[index] = 1;
     } else if (ht->initialized[index] == 1 && ht->currentSize[index] < ht->capacity[index]) {
         ht->table[index][ht->currentSize[index]] = val;
