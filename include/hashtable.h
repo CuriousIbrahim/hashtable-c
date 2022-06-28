@@ -18,4 +18,6 @@ void insert(struct HashTable *ht, int val);
 
 int search(struct HashTable *ht, int val);
 
+void remove(struct HashTable *ht, int val);
+
 #endif

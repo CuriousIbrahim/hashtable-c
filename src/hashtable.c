@@ -15,12 +15,33 @@ void insert(struct HashTable *ht, int val) {
 
         ht->capacity[index] = START_SIZE;
         ht->currentSize[index] = 1;
-        ht->initialized[index] = 1;
+        ht->initialized[index] = TRUE;
     } else if (ht->initialized[index] == 1 && ht->currentSize[index] < ht->capacity[index]) {
         ht->table[index][ht->currentSize[index]] = val;
         ht->currentSize[index] += 1;
     } else {
 
+    }
+}
+
+// TODO
+void remove(struct HashTable *ht, int val) {
+    int index = getIndex(val);
+
+    if (ht->initialized[index] == TRUE) {
+        int i = 0;
+        int found = FALSE;
+
+        while (i < ht->currentSize[index]) {
+            if (ht->table[index][i] == val) {
+                found = TRUE;
+                break;
+            }
+        }
+
+        if (found == TRUE) {
+
+        }
     }
 }
 
